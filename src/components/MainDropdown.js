@@ -26,7 +26,7 @@ export default class MainDropdown extends React.Component {
             
             <div>
             <Dropdown overlay = {menu} trigger={['click']}>
-                <a style={{color: 'black', fontSize: 30, fontWeight: 'lighter'}}className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                <a style={{color: 'black', fontSize: 42, fontWeight: 'lighter'}}className="ant-dropdown-link" onClick={e => e.preventDefault()}>
                 CreativeConnect <CaretDownOutlined />
                 </a>
             </Dropdown>
