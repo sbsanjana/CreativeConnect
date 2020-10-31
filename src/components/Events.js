@@ -3,7 +3,7 @@ import { List, Avatar, Button} from 'antd';
 import {PlusOutlined} from '@ant-design/icons';
 
 
-export default class Messages extends React.Component {
+export default class Events extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -23,13 +23,12 @@ export default class Messages extends React.Component {
         return (
             <div>
            
-                <h1 style={{fontWeight: 'lighter', textAlign:'left'}}> Messages: </h1>
+                <h1 style={{fontWeight: 'lighter', textAlign:'left'}}> Events for you: </h1>
             <List
             itemLayout="horizontal"
             >
                 <List.Item>
                 <List.Item.Meta
-                  avatar={<Avatar src="https://www.pngarts.com/files/3/Avatar-PNG-Download-Image.png" />}
                   title={<a href="">NAME HERE</a>}
                   style={{textAlign:'left'}}
                   description="Ant Design, a design language for background applications, is refined by Ant UED Team"
@@ -37,7 +36,6 @@ export default class Messages extends React.Component {
                 </List.Item>
                 <List.Item>
                 <List.Item.Meta
-                  avatar={<Avatar src="https://www.pngarts.com/files/3/Avatar-PNG-Download-Image.png" />}
                   title={<a href="">NAME HERE</a>}
                   style={{textAlign:'left'}}
                   description="Ant Design, a design language for background applications, is refined by Ant UED Team"
@@ -45,15 +43,12 @@ export default class Messages extends React.Component {
                 </List.Item>
                 <List.Item>
                 <List.Item.Meta
-                  avatar={<Avatar src="https://www.pngarts.com/files/3/Avatar-PNG-Download-Image.png" />}
                   title={<a href="">NAME HERE</a>}
                   style={{textAlign:'left'}}
                   description="Ant Design, a design language for background applications, is refined by Ant UED Team"
                 />
                 </List.Item>
             </List>
-            <PlusOutlined style={{marginRight: 10}}/>
-            <Button>New Message</Button>
 
          
             </div>

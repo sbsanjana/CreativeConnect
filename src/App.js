@@ -7,6 +7,7 @@ import DropMenu from './components/MainDropdown'
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import Messages from './components/Messages';
+import Events from './components/Events';
 
 function App() {
   return (
@@ -28,9 +29,15 @@ function App() {
     </Row>
 
     <Row>
-      <Col span={6}>
+      <Col span={8}>
       <Messages />
 
+      </Col>
+      
+    </Row>
+    <Row style={{marginTop: 20}}>
+    <Col span={8}>
+        <Events />
       </Col>
     </Row>
 
