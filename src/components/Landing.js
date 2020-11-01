@@ -44,8 +44,7 @@ function App() {
  
     </Col>
     <Col span={16} push={1}>
-    <h1 style={{fontWeight:'lighter', textAlign:'left', marginLeft:100}}> Feed:</h1>
-
+    
     <Feed />
     </Col>
 

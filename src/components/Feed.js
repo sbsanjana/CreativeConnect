@@ -1,6 +1,6 @@
 import React from 'react';
-import { Row, Col, Card,Avatar } from 'antd';
-import { CommentOutlined, LikeOutlined, EllipsisOutlined } from '@ant-design/icons';
+import { Row, Col, Card,Avatar, Input,Button} from 'antd';
+import { CommentOutlined, LikeOutlined, EllipsisOutlined, EnvironmentOutlined, PlaySquareOutlined, PictureOutlined} from '@ant-design/icons';
 
 
 export default class Feed extends React.Component {
@@ -21,6 +21,23 @@ export default class Feed extends React.Component {
 
         return (
             <div>
+            <Row justify='center'> 
+            <Col>
+            <h1 style={{fontWeight:'lighter', textAlign:'left'}}> What did you try today?</h1>
+            <Input.TextArea rows={4} style={{width:400}}/>
+
+           <Col span={6}>
+            <Row justify='start'>
+            <PictureOutlined style={{fontSize: 30, marginRight:4}}/>
+            <PlaySquareOutlined style={{fontSize: 30}}/>
+            <EnvironmentOutlined style={{fontSize: 30}}/>
+           
+            </Row>
+   
+               
+            </Col>
+            </Col>
+            </Row>
             {this.state.posts.map((post, index)=> (
                 <Row justify='center'>
                   <Card 
@@ -47,7 +64,9 @@ export default class Feed extends React.Component {
                 <img style={{width:250, height:250}}src={post.image} />
     
                 </Card>
+                <br/>
                 </Row>
+               
             ))}
             </div>
         )
