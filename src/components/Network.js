@@ -1,7 +1,9 @@
 import React from 'react';
-import {Row, Col, Avatar, List} from 'antd';
+import {Row, Col, Avatar, List, Button} from 'antd';
 import { UserOutlined, CaretLeftOutlined } from '@ant-design/icons';
 import { useHistory } from "react-router-dom";
+import { Input } from 'antd';
+
 
 export default class Network extends React.Component {
     constructor(props) {
@@ -30,8 +32,13 @@ export default class Network extends React.Component {
           </Row>
 
           <Row justify='center'>
+          <Col>
+          
+          </Col>
               <Col span={9} style={{margin:40}}>
-                  <h1 style={{fontWeight:'lighter', textAlign:'left'}}> My Network:</h1>
+                <h1 style={{fontWeight:'lighter', textAlign:'left'}}> My Network:</h1>
+                  
+                  
               <List
             itemLayout="vertical"
             >
@@ -60,6 +67,7 @@ export default class Network extends React.Component {
                 />
                 </List.Item>
             </List>
+            <Button> View all</Button>
 
 
               </Col>
@@ -94,6 +102,8 @@ export default class Network extends React.Component {
                 />
                 </List.Item>
             </List>
+            <Button> View all</Button>
+
 
               </Col>
           </Row>
