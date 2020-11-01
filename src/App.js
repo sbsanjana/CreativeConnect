@@ -3,43 +3,35 @@ import logo from './logo.svg';
 import './App.css';
 import { Row, Col } from 'antd';
 import 'antd/dist/antd.css';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import DropMenu from './components/MainDropdown'
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import Messages from './components/Messages';
 import Events from './components/Events';
+import Network from './components/Network';
+import Landing from './components/Landing';
+
 
 function App() {
   return (
     <div className="App" style={{padding: 20}}>
-      <Row>
-      <Col span={18} push={11}>
-        <DropMenu />
-      </Col>
-    </Row>
+      <BrowserRouter>
+      <Switch>
+          <Route exact path="/" component = {Landing}>
+           
+          </Route>
+          <Route path="/network" component={Network}>
+          </Route>
 
-    <Row justify='center'>
-      <Col>
-      <Avatar style={{marginRight:10}}size={100} icon={<UserOutlined />} />
-      </Col>
-
-      <Col>
-      <h1 style={{fontWeight: 250, fontSize: 75, textAlign: 'center'}}>Hello Charlie!</h1>
-      </Col>
-    </Row>
-
-    <Row>
-      <Col span={8}>
-      <Messages />
-
-      </Col>
+        </Switch>
+      </BrowserRouter>
       
-    </Row>
-    <Row style={{marginTop: 20}}>
-    <Col span={8}>
-        <Events />
-      </Col>
-    </Row>
 
       
     </div>
