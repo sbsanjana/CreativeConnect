@@ -13,6 +13,7 @@ import { UserOutlined } from '@ant-design/icons';
 import Messages from './Messages';
 import Events from './Events';
 import Network from './Network';
+import Feed from './Feed';
 
 
 function App() {
@@ -35,17 +36,19 @@ function App() {
       </Col>
     </Row>
 
-    <Row>
-      <Col span={8}>
-      <Messages />
-
-      </Col>
-      
-    </Row>
-    <Row style={{marginTop: 20}}>
+<Row>
     <Col span={8}>
+    
+      <Messages />
         <Events />
-      </Col>
+ 
+    </Col>
+    <Col span={16} push={1}>
+    <h1 style={{fontWeight:'lighter', textAlign:'left', marginLeft:100}}> Feed:</h1>
+
+    <Feed />
+    </Col>
+
     </Row>
 
       
