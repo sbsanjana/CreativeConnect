@@ -16,7 +16,7 @@ import Messages from './components/Messages';
 import Events from './components/Events';
 import Network from './components/Network';
 import Landing from './components/Landing';
-
+import Portfolio from './components/Portfolio';
 
 function App() {
   return (
@@ -27,6 +27,9 @@ function App() {
            
           </Route>
           <Route path="/network" component={Network}>
+          </Route>
+
+          <Route path="/portfolio" component={Portfolio}>
           </Route>
 
         </Switch>
