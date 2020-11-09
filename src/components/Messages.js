@@ -30,25 +30,25 @@ export default class Messages extends React.Component {
                 <List.Item>
                 <List.Item.Meta
                   avatar={<Avatar src="https://www.pngarts.com/files/3/Avatar-PNG-Download-Image.png" />}
-                  title={<a href="">NAME HERE</a>}
+                  title={<a href="">Johnny Smith</a>}
                   style={{textAlign:'left'}}
-                  description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                  description="Hey Charlie! Here's an opportunity you might find interesting"
                 />
                 </List.Item>
                 <List.Item>
                 <List.Item.Meta
                   avatar={<Avatar src="https://www.pngarts.com/files/3/Avatar-PNG-Download-Image.png" />}
-                  title={<a href="">NAME HERE</a>}
+                  title={<a href="">Charles Schwab</a>}
                   style={{textAlign:'left'}}
-                  description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                  description="Hey, it was nice meeting you last week! Let's stay connected :)"
                 />
                 </List.Item>
                 <List.Item>
                 <List.Item.Meta
                   avatar={<Avatar src="https://www.pngarts.com/files/3/Avatar-PNG-Download-Image.png" />}
-                  title={<a href="">NAME HERE</a>}
+                  title={<a href="">Trevor Noah</a>}
                   style={{textAlign:'left'}}
-                  description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                  description="Hey, here's the link to the event we spoke about last week"
                 />
                 </List.Item>
             </List>
