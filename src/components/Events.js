@@ -29,23 +29,23 @@ export default class Events extends React.Component {
             >
                 <List.Item>
                 <List.Item.Meta
-                  title={<a href="">NAME HERE</a>}
+                  title={<a href="">Trevor’s Dance Class (Advanced)</a>}
                   style={{textAlign:'left'}}
-                  description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                  description="Millenium Dance Studio in Los Angeles, CA | 9:30-11am | Sign up here!"
                 />
                 </List.Item>
                 <List.Item>
                 <List.Item.Meta
-                  title={<a href="">NAME HERE</a>}
+                  title={<a href="">Erika’s Dance Showcase (Beginner) </a>}
                   style={{textAlign:'left'}}
-                  description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                  description="Shining Stars Studio in Los Angeles, CA | 5-6pm"
                 />
                 </List.Item>
                 <List.Item>
                 <List.Item.Meta
-                  title={<a href="">NAME HERE</a>}
+                  title={<a href="">Tammy's Tango</a>}
                   style={{textAlign:'left'}}
-                  description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                  description="Salsa Ballroom in Los Angeles, CA | 3-4pm"
                 />
                 </List.Item>
             </List>
