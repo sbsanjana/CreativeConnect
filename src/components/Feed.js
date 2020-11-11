@@ -97,7 +97,9 @@ export default class Feed extends React.Component {
             </Col>
             </Col>
             </Row>
-            {this.state.posts.reverse().map((post, index)=> (
+            {this.state.posts.reverse().map(post => post.content === "Image" ? (
+
+             
                 <Row justify='center'>
                   <Card 
                   Avatar= "https://cdn.iconscout.com/icon/free/png-512/avatar-369-456321.png"
@@ -130,10 +132,47 @@ export default class Feed extends React.Component {
                 </Card>
                 <br/>
                 </Row>
-    }
+    
                 
                
-            ))}
+            ) : (
+
+                <Row justify='center'>
+                <Card 
+                Avatar= "https://cdn.iconscout.com/icon/free/png-512/avatar-369-456321.png"
+                title={<Row style={{textAlign:'left'}}> 
+                <img style={{width: 25, height: 25, marginRight: 15}} 
+                src="https://cdn.iconscout.com/icon/free/png-512/avatar-369-456321.png" />
+                <Col span={10}>
+                {post.name} 
+                </Col>
+                <Col push={8}>
+                    {post.date}
+
+                </Col>
+                
+              </Row>}  
+                actions={[
+                  <CommentOutlined key="setting" />,
+                  <LikeOutlined key="edit" />,
+                  <EllipsisOutlined key="ellipsis" />,
+                ]}
+                bordered={false} 
+                description="This is the description"
+                style={{ width: 600 }}>
+                                         
+
+                  
+              <p>  {post.text} </p>
+              <ReactPlayer style={{width:250, height:250}}url={post.url} />
+  
+              </Card>
+              <br/>
+              </Row>
+
+            )
+            
+            )}
             </div>
         )
     }
