@@ -24,7 +24,7 @@ function App() {
       <BrowserRouter>
       <Switch>
           <Route exact path="/" component = {Landing}>
-           
+
           </Route>
           <Route path="/network" component={Network}>
           </Route>
@@ -34,9 +34,9 @@ function App() {
 
         </Switch>
       </BrowserRouter>
-      
 
-      
+
+
     </div>
   );
 }
