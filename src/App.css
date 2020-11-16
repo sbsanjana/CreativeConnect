@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.droppable {
+  position: absolute;
+  width: 150px;
+  height: 50vh;
+  right: 0;
+  top: 50vh;
+  background-color: #9E9E9E;
+  border-left: 1px dotted;
+}
+
+.draggable {
+  width: 100px;
+  height: 100px;
+  background-image: "url(https://www.iconfinder.com/icons/211677/image_icon)";
+  margin: 5px auto;
+  line-height: 5em;
+}

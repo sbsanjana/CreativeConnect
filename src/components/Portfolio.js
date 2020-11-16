@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Row, Col, Avatar, List, Button} from 'antd';
 import { UserOutlined, CaretLeftOutlined } from '@ant-design/icons';
 import { useHistory } from "react-router-dom";
@@ -10,104 +10,100 @@ export default class Portfolio extends React.Component {
         super(props)
     }
 
+    state = {
+        tasks: [
+            {name:"Image",category:"wip", bgcolor:"grey", image_icon: "url(https://www.iconfinder.com/icons/211677/image_icon)"},
+            {name:"Video", category:"wip", bgcolor:"grey"},
+            {name:"Social Media", category:"complete", bgcolor:"skyblue"}
+          ]
+    }
+
+    onDragStart = (ev, id) => {
+        console.log('dragstart:',id);
+        ev.dataTransfer.setData("id", id);
+    }
+
+    onDragOver = (ev) => {
+        ev.preventDefault();
+    }
+
+    onDrop = (ev, cat) => {
+       let id = ev.dataTransfer.getData("id");
+
+       let tasks = this.state.tasks.filter((task) => {
+           if (task.name == id) {
+               task.category = cat;
+           }
+           return task;
+       });
+
+       this.setState({
+           ...this.state,
+           tasks
+       });
+    }
+
     render() {
-        return (
-            <div>
+      var tasks = {
+          wip: [],
+          complete: []
+      }
 
-            <Row>
-            <Col span={4}>
-                <a style={{color: 'black', fontSize: 42, fontWeight: 'lighter'}} onClick={() => this.props.history.push('/')}>
-                <CaretLeftOutlined /> Back 
-                </a>            </Col>
-          </Row>
-      
-            <Row justify='center'>
+      this.state.tasks.forEach ((t) => {
+          tasks[t.category].push(
+              <div key={t.name}
+                  onDragStart = {(e) => this.onDragStart(e, t.name)}
+                  draggable
+                  className="draggable"
+                  style = {{backgroundColor: t.bgcolor}}
+              >
+                  {t.name}
+              </div>
+          );
+      });
+
+      return (
+
+          <div className="container-drag">
+              <div>
+              <Row>
+              <Col span={4}>
+                  <a style={{color: 'black', fontSize: 42, fontWeight: 'lighter'}} onClick={() => this.props.history.push('/')}>
+                  <CaretLeftOutlined /> Back
+                  </a>            </Col>
+            </Row>
+                <Row justify='center'>
+                    <Col>
+                    <Avatar style={{marginRight:10}}size={100} icon={<UserOutlined />} />
+                    </Col>
+
+                    <Col>
+                    <h1 style={{fontWeight: 250, fontSize: 75, textAlign: 'center'}}>Charlie's Portfolio</h1>
+                    </Col>
+              </Row>
+
+              <Row justify='center'>
                 <Col>
-                <Avatar style={{marginRight:10}}size={100} icon={<UserOutlined />} />
+                  <h1 style={{fontWeight: 100, fontSize: 25, textAlign: 'center'}}>I am a hip-hop/contemp dancer in the LA area looking for commercial opportunities!</h1>
                 </Col>
-        
-                <Col>
-                <h1 style={{fontWeight: 250, fontSize: 75, textAlign: 'center'}}>Hello Charlie!</h1>
-                </Col>
-          </Row>
+              </Row>
+              </div>
 
-          <Row justify='center'>
-          <Col>
-          
-          </Col>
-              <Col span={9} style={{margin:40}}>
-                <h1 style={{fontWeight:'lighter', textAlign:'left'}}> My Network:</h1>
-                  
-                  
-              <List
-            itemLayout="vertical"
-            >
-                <List.Item>
-                <List.Item.Meta
-                  avatar={<Avatar src="https://www.pngarts.com/files/3/Avatar-PNG-Download-Image.png" />}
-                  title={<a href="">NAME HERE</a>}
-                  style={{textAlign:'left'}}
-                  description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                />
-                </List.Item>
-                <List.Item>
-                <List.Item.Meta
-                  avatar={<Avatar src="https://www.pngarts.com/files/3/Avatar-PNG-Download-Image.png" />}
-                  title={<a href="">NAME HERE</a>}
-                  style={{textAlign:'left'}}
-                  description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                />
-                </List.Item>
-                <List.Item>
-                <List.Item.Meta
-                  avatar={<Avatar src="https://www.pngarts.com/files/3/Avatar-PNG-Download-Image.png" />}
-                  title={<a href="">NAME HERE</a>}
-                  style={{textAlign:'left'}}
-                  description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                />
-                </List.Item>
-            </List>
-            <Button> View all</Button>
+              <div className="wip"
+                  onDragOver={(e)=>this.onDragOver(e)}
+                  onDrop={(e)=>{this.onDrop(e, "wip")}}>
+                  <span className="task-header">Portfolio</span>
+                  {tasks.wip}
+              </div>
+              <div className="droppable"
+                  onDragOver={(e)=>this.onDragOver(e)}
+                  onDrop={(e)=>this.onDrop(e, "complete")}>
+                   <span className="task-header">Tools</span>
+                   {tasks.complete}
+              </div>
 
 
-              </Col>
-              <Col span={9} style={{margin:40}}>
-              <h1 style={{fontWeight:'lighter', textAlign:'left'}}> Recommended:</h1>
-
-              <List
-            itemLayout="vertical"
-            >
-                <List.Item>
-                <List.Item.Meta
-                  avatar={<Avatar src="https://www.pngarts.com/files/3/Avatar-PNG-Download-Image.png" />}
-                  title={<a href="">NAME HERE</a>}
-                  style={{textAlign:'left'}}
-                  description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                />
-                </List.Item>
-                <List.Item>
-                <List.Item.Meta
-                  avatar={<Avatar src="https://www.pngarts.com/files/3/Avatar-PNG-Download-Image.png" />}
-                  title={<a href="">NAME HERE</a>}
-                  style={{textAlign:'left'}}
-                  description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                />
-                </List.Item>
-                <List.Item>
-                <List.Item.Meta
-                  avatar={<Avatar src="https://www.pngarts.com/files/3/Avatar-PNG-Download-Image.png" />}
-                  title={<a href="">NAME HERE</a>}
-                  style={{textAlign:'left'}}
-                  description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                />
-                </List.Item>
-            </List>
-            <Button> View all</Button>
-
-
-              </Col>
-          </Row>
           </div>
-        )
+      );
     }
 }

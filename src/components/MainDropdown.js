@@ -16,7 +16,7 @@ export default class MainDropdown extends React.Component {
               <a href="/network" style={{textAlign: 'center'}}>My Network</a>
             </Menu.Item>
             <Menu.Item key="1">
-              <a href="" style={{textAlign: 'center'}}>My Portfolio</a>
+              <a href="/portfolio" style={{textAlign: 'center'}}>My Portfolio</a>
             </Menu.Item>
             <Menu.Item key="3" style={{textAlign: 'center'}}>Settings</Menu.Item>
           </Menu>
