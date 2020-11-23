@@ -40,9 +40,9 @@
 .droppable {
   position: absolute;
   width: 150px;
-  height: 50vh;
+  height: 75vh;
   right: 0;
-  top: 50vh;
+  top: 41vh;
   background-color: #9E9E9E;
   border-left: 1px dotted;
 }
@@ -53,4 +53,26 @@
   background-image: "url(https://www.iconfinder.com/icons/211677/image_icon)";
   margin: 5px auto;
   line-height: 5em;
+  background-color: #9E9E9E;
+}
+
+.wip {
+  float: left; 
+  display: inline; 
+  width: 49%;  
+  height: 50vh;
+  right: 0;
+  top: 50vh;
+  background-color: #9E9E9E;
+  border-left: 1px dotted;
+}
+.wip2 {
+  float: left; 
+  display: inline; 
+  width: 49%;  
+  height: 50vh;
+  right: 0;
+  top: 50vh;
+  background-color: #9E9E9E;
+  border-left: 1px dotted;
 }

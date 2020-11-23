@@ -12,8 +12,8 @@ export default class Portfolio extends React.Component {
 
     state = {
         tasks: [
-            {name:"Image",category:"wip", bgcolor:"grey", image_icon: "url(https://www.iconfinder.com/icons/211677/image_icon)"},
-            {name:"Video", category:"wip", bgcolor:"grey"},
+            {name:"Image",category:"complete", bgcolor:"grey"},
+            {name:"Video", category:"complete", bgcolor:"grey"},
             {name:"Social Media", category:"complete", bgcolor:"skyblue"}
           ]
     }
@@ -46,6 +46,7 @@ export default class Portfolio extends React.Component {
     render() {
       var tasks = {
           wip: [],
+          wip2: [],
           complete: []
       }
 
@@ -55,7 +56,7 @@ export default class Portfolio extends React.Component {
                   onDragStart = {(e) => this.onDragStart(e, t.name)}
                   draggable
                   className="draggable"
-                  style = {{backgroundColor: t.bgcolor}}
+                  style = {{backgroundColor: t.bgcolor, backgroundImage: "url(https://www.iconfinder.com/icons/211677/image_icon)"}}
               >
                   {t.name}
               </div>
@@ -92,16 +93,22 @@ export default class Portfolio extends React.Component {
               <div className="wip"
                   onDragOver={(e)=>this.onDragOver(e)}
                   onDrop={(e)=>{this.onDrop(e, "wip")}}>
-                  <span className="task-header">Portfolio</span>
+                  <span className="task-header">Experience</span>
                   {tasks.wip}
+              </div>
+              <div className="wip2"
+                  onDragOver={(e)=>this.onDragOver(e)}
+                  onDrop={(e)=>{this.onDrop(e, "wip2")}}>
+                  <span className="task-header">Social Media Platforms</span>
+                  {tasks.wip2}
               </div>
               <div className="droppable"
                   onDragOver={(e)=>this.onDragOver(e)}
                   onDrop={(e)=>this.onDrop(e, "complete")}>
                    <span className="task-header">Tools</span>
                    {tasks.complete}
+                   <Button onClick={this.post}> Change Layout </Button>
               </div>
-
 
           </div>
       );
